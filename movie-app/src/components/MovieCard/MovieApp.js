@@ -411,7 +411,7 @@ const movies = [
   },
   {
     ComingSoon: true,
-    Title: "Rogue One: A Star Wars Story",
+    Title: "Rogue One",
     Year: "2016",
     Rated: "N/A",
     Released: "16 Dec 2016",
@@ -517,11 +517,29 @@ const MovieCard = ({ movie }) => {
   return (
     <a href='#' className={`movie-card ${expanded ? 'expanded' : ''}`} onClick={toggleExpanded}>
       <img src={movie.Poster} alt={movie.Title} />
-          <h2>{movie.Title}</h2>
+      {expanded && (
+        <div className="movie-details">
+          <ul>
+          <li>IMDB Rating: {movie.imdbRating}</li>
+          <li>Release Year: {movie.Year}</li>
+          <li>Running Time: {movie.Runtime}</li>
+          <li>Directed by: {movie.Director}</li>
+          <li>Language: {movie.Language}</li>
+          <li>Plot: {movie.Plot}</li>
+          <button>Play Movie</button>
+          <button>Watch Trailer</button>
+          </ul>
+        </div>
+      )}
+      {!expanded && (
+        <div>
+        <h2>{movie.Title}</h2>
           <div className='flex-icon'>
             <i className='icon icon-playbutton' />
             <i className='icon icon-union' />
-        </div>
+          </div>
+          </div>
+        )}
     </a>
   );
 };
