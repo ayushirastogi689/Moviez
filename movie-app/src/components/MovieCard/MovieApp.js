@@ -509,9 +509,13 @@ const movies = [
 
 
 const MovieCard = ({ movie }) => {
-  
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
   return (
-    <a href='#' className="movie-card">
+    <a href='#' className={`movie-card ${expanded ? 'expanded' : ''}`} onClick={toggleExpanded}>
       <img src={movie.Poster} alt={movie.Title} />
           <h2>{movie.Title}</h2>
           <div className='flex-icon'>

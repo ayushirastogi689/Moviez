@@ -7,7 +7,7 @@ const Sidebar2 = () => {
     <div className="sidebar">
       <div className="user-profile">
         <img src={image} alt="User Avatar" />
-        <h3>Erric Hoffman</h3>
+        <h3>Eric Hoffman</h3>
       </div>
       <div className="vector1"></div>
       <ul className="sidebar-nav">
