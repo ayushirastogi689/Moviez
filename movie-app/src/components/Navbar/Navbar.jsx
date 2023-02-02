@@ -50,7 +50,7 @@ const Container = styled.div`
   nav {
     position: sticky;
     top: 0;
-    height: 6.5rem;
+    height: 80px;
     width: 100%;
     justify-content: center;
     position: fixed;
@@ -82,7 +82,7 @@ const Container = styled.div`
         width: 567px;
         height: 55px;
         left: 323px;
-        top: 42px;
+        top: 10px;
         border-radius: 8px;
 
         display: flex;

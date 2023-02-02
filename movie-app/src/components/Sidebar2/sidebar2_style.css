@@ -1,6 +1,6 @@
 .sidebar {
   position: absolute;
-  width: 275px;
+  width: 260px;
   height: 100vh;
   left: 0px;
   top: 0px;
@@ -30,7 +30,7 @@
 
 .vector1 {
   position: absolute;
-  width: 274.5px;
+  width: 260px;
   height: 0px;
   left: 0.5px;
   top: 140px;
@@ -38,7 +38,7 @@
 }
 .vector2 {
   position: absolute;
-  width: 274.5px;
+  width: 260px;
   height: 0px;
   left: 0.5px;
   top: 375px;
@@ -48,7 +48,7 @@
 
 .vector3 {
   position: absolute;
-  width: 274.5px;
+  width: 260px;
   height: 0px;
   left: 0.5px;
   top: 465px;

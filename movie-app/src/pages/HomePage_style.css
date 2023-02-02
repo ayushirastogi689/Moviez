@@ -8,3 +8,9 @@
   color: white;
   text-align: center;
 }
+
+.container {
+  max-width: 800px;
+  margin-inline: auto;
+  margin-top: 136px;
+}
