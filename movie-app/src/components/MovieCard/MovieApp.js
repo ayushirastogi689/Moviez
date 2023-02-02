@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import "./MovieApp_style.css";
 
 const movies = [
@@ -523,17 +524,6 @@ const MovieCard = ({ movie }) => {
 
 const MovieApp = () =>
 {
-   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredMovies, setFilteredMovies] = useState(movies);
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-    setFilteredMovies(
-      movies.filter((movie) =>
-        movie.Title.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    );
-  };
   return (
     <div className='movie-grid'>
       {movies.map((movie, index) => (
