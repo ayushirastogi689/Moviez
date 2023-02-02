@@ -1,12 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
 import { FaSearch } from "react-icons/fa";
+
+import movies from "../../data/moviesData.js";
+import MovieCard from "../MovieCard/MovieApp.js";
 
 export default function Navbar({ isScrolled }) {
   const [showSearch, setShowSearch] = useState(false);
   const [inputHover, setInputHover] = useState(false);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState(movies);
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+    setFilteredMovies(
+      movies.filter((movie) =>
+        movie.Title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  };
 
   return (
     <Container>
@@ -26,6 +40,7 @@ export default function Navbar({ isScrolled }) {
             >
               <FaSearch />
             </button>
+            <div>
             <input
               type="text"
               placeholder={"Title, Movies, Keyword"}
@@ -36,6 +51,8 @@ export default function Navbar({ isScrolled }) {
                 setInputHover(false);
               }}
             />
+
+    </div>
           </div>
         </div>
       </nav>

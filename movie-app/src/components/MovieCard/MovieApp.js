@@ -1,7 +1,5 @@
 import React from 'react';
 import "./MovieApp_style.css";
-import playbutton from "../../assets/playbutton.svg";
-import union from "../../assets/union.svg";
 
 const movies = [
   {
@@ -510,6 +508,7 @@ const movies = [
 
 
 const MovieCard = ({ movie }) => {
+  
   return (
     <a href='#' className="movie-card">
       <img src={movie.Poster} alt={movie.Title} />
@@ -522,9 +521,21 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-const MovieApp = () => {
+const MovieApp = () =>
+{
+   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState(movies);
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+    setFilteredMovies(
+      movies.filter((movie) =>
+        movie.Title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  };
   return (
-    <div>
+    <div className='movie-grid'>
       {movies.map((movie, index) => (
         <MovieCard key={index} movie={movie} />
       ))}
